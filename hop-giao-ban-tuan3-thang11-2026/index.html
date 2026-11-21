@@ -833,6 +833,10 @@ main a.dl-form:hover, main a.dl-form:focus-visible { filter: brightness(1.06); o
 <script>
 (function () {
   var V = JSON.parse(document.getElementById('vault').textContent), SK = 'khoi-cfo-t1-11-2026:auth:' + (V.bid || '');
+  // trang trong bộ nhớ đệm cũ hơn bản đăng (khoá mã hoá đã đổi) → tự tải bản mới một lần
+  try { fetch(location.pathname + '?b=' + Date.now(), { cache: 'no-store' }).then(function (r) { return r.ok ? r.text() : ''; }).then(function (t) {
+    var m = t.match(/"bid": "([0-9a-f]+)"/); if (m && V.bid && m[1] !== V.bid && !sessionStorage.getItem('rl-' + m[1])) { sessionStorage.setItem('rl-' + m[1], '1'); location.replace(location.pathname + '?v=' + m[1] + location.hash); }
+  }).catch(function () {}); } catch (x) {}
   // khối mã hoá lớn để ở file riêng v/<tên>.json (bản đăng web) — tải khi cần, vẫn là bản mã hoá
   var BC = {};
   function blob(n) {

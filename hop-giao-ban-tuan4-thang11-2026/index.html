@@ -552,7 +552,7 @@ main .chip.code.c-kt { background: var(--kt); color: #fff; } main .chip.code.c-n
 .dl-st { font-size: 14px; font-weight: 600; color: #14653A; background: #E3F4EA; border-radius: 999px; padding: 4px 10px; } .dl-get { text-decoration: none; }
 .dl-r { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; } .dl-m { font-size: 14px; color: #6B6475; }
 @media print { #file-download { display: none !important; } }
-a.scale-i, a.sc-r { color: inherit; text-decoration: none; } a.scale-i:hover, a.sc-r:hover { background: var(--surface-2); } a.trn { color: inherit; text-decoration: none; cursor: pointer; } a.trn:hover { border-color: var(--tim); } .trn > * { min-width: 0; } .trn b, .trn span { white-space: normal; overflow-wrap: anywhere; } .chev { min-width: 0; }
+a.scale-i, a.sc-r { color: inherit; text-decoration: none; } a.scale-i:hover, a.sc-r:hover { background: var(--surface-2); } a.trn { color: inherit; text-decoration: none; cursor: pointer; } a.trn:hover { border-color: var(--tim); } .trn { grid-template-columns: minmax(0, 2fr) 22px minmax(0, 3fr); } .trn > * { min-width: 0; } .trn > :first-child { overflow-wrap: normal; word-break: normal; } .trn b, .trn span { white-space: normal; overflow-wrap: anywhere; } .chev { min-width: 0; }
 
 .cb > div { min-width: 0; } .cb .chip, .dq .chip, .gv header .chip { white-space: normal; text-align: left; } .chevs { flex-wrap: wrap; }
 
